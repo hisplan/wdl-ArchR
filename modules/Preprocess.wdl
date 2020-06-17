@@ -7,7 +7,7 @@ task RunTutorial {
         String outputDir = "HemeTutorial"
     }
 
-    String dockerImage = "hisplan/archr:0.9.x-snapshot-20200616"
+    String dockerImage = "hisplan/archr:0.9.x-snapshot-20200617"
 
     command {
         set -euo pipefail
@@ -17,12 +17,12 @@ task RunTutorial {
         Rscript ~{tutorialCode}
 
         find .
-        find ./QualityControl/ -type f > filelist-qc.txt
+        # find ./QualityControl/ -type f > filelist-qc.txt
     }
 
     output {
         Array[File] logFiles = glob("ArchRLogs/*.log")
-        Array[File] qcFiles = read_lines("filelist-qc.txt")
+        Array[File] qcFiles = glob("QualityControl/*/*")
         Array[File] arrowFiles = glob(outputDir + "/ArroFiles/*.arrow")
         Array[File] lsiFiles = glob(outputDir + "/IterativeLSI/*")
         Array[File] embeddingFiles = glob(outputDir + "/Embeddings/*")

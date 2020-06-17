@@ -21,5 +21,6 @@ workflow Preprocess {
         Array[File] embeddingFiles = RunTutorial.embeddingFiles
         Array[File] plotFiles = RunTutorial.plotFiles
         File projectFile = RunTutorial.projectFile
+        File? fileList = RunTutorial.fileList
     }
 }
