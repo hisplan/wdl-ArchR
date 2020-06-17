@@ -1,0 +1,18 @@
+{
+    "Run.fragmentsFiles": [
+        "s3://dp-lab-test/scATAC_BMMC_R1.fragments.tsv.gz",
+        "s3://dp-lab-test/scATAC_CD34_BMMC_R1.fragments.tsv.gz",
+        "s3://dp-lab-test/scATAC_PBMC_R1.fragments.tsv.gz"
+    ],
+    "Run.fragmentsIndexFiles": [
+        "s3://dp-lab-test/scATAC_BMMC_R1.fragments.tsv.gz.tbi",
+        "s3://dp-lab-test/scATAC_CD34_BMMC_R1.fragments.tsv.gz.tbi",
+        "s3://dp-lab-test/scATAC_PBMC_R1.fragments.tsv.gz.tbi"
+    ],
+    "Run.sampleNames": [
+        "BMMC",
+        "CD34_BMMC",
+        "PBMC"
+    ],
+    "Run.genome": "hg19"
+}

@@ -3,7 +3,7 @@
 #hack: get dependency set up
 ln -s ../modules/ modules
 
-modules="Preprocess"
+modules="Preprocess-Run Preprocess-RunTutorial"
 
 for module_name in $modules
 do

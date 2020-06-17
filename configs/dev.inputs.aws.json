@@ -1,0 +1,18 @@
+{
+    "ArchR.fragmentsFiles": [
+        "s3://dp-lab-test/archr/datasets/tutorial/scATAC_BMMC_R1.fragments.tsv.gz",
+        "s3://dp-lab-test/archr/datasets/tutorial/scATAC_CD34_BMMC_R1.fragments.tsv.gz",
+        "s3://dp-lab-test/archr/datasets/tutorial/scATAC_PBMC_R1.fragments.tsv.gz"
+    ],
+    "ArchR.fragmentsIndexFiles": [
+        "s3://dp-lab-test/archr/datasets/tutorial/scATAC_BMMC_R1.fragments.tsv.gz.tbi",
+        "s3://dp-lab-test/archr/datasets/tutorial/scATAC_CD34_BMMC_R1.fragments.tsv.gz.tbi",
+        "s3://dp-lab-test/archr/datasets/tutorial/scATAC_PBMC_R1.fragments.tsv.gz.tbi"
+    ],
+    "ArchR.sampleNames": [
+        "BMMC",
+        "CD34_BMMC",
+        "PBMC"
+    ],
+    "ArchR.genome": "hg19"
+}

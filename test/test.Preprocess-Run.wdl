@@ -2,7 +2,7 @@ version 1.0
 
 import "modules/Preprocess.wdl" as Preprocess
 
-workflow ArchR {
+workflow Run {
 
     input {
         Array[File] fragmentsFiles

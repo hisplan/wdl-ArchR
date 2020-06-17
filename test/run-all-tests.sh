@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="Preprocess"
+modules="Preprocess-Run Preprocess-RunTutorial"
 
 for module_name in $modules
 do

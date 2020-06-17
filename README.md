@@ -12,7 +12,7 @@ conda install -c cyclus java-jre
 ```bash
 $ ./submit.sh \
     -k ~/keys/secrets-aws.json \
-    -i ArchR.inputs.json \
-    -l ArchR.labels.aws.json \
+    -i ./configs/dev.inputs.aws.json \
+    -l ./configs/dev.labels.aws.json \
     -o ArchR.options.aws.json
 ```

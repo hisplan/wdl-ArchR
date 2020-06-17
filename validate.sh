@@ -3,4 +3,4 @@
 java -jar ~/Applications/womtool.jar \
     validate \
     ArchR.wdl \
-    --inputs ArchR.inputs.json
+    --inputs ./configs/dev.inputs.aws.json
