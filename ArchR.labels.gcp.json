@@ -1,0 +1,9 @@
+{
+    "pipelineType": "ArchR",
+    "project": "Project 123",
+    "sample": "S316",
+    "owner": "chunj",
+    "destination": "gs://chunj-cromwell/outputs/ArchR",
+    "transfer": "-",
+    "comment": "ArchR"
+}
