@@ -16,18 +16,18 @@ task RunTutorial {
         # install.packages(pkgs, repos='http://cran.us.r-project.org')
         Rscript ~{tutorialCode}
 
-        find .
-        # find ./QualityControl/ -type f > filelist-qc.txt
+        find . > filelist-all.txt
     }
 
     output {
         Array[File] logFiles = glob("ArchRLogs/*.log")
         Array[File] qcFiles = glob("QualityControl/*/*")
-        Array[File] arrowFiles = glob(outputDir + "/ArroFiles/*.arrow")
+        Array[File] arrowFiles = glob(outputDir + "/ArrowFiles/*.arrow")
         Array[File] lsiFiles = glob(outputDir + "/IterativeLSI/*")
         Array[File] embeddingFiles = glob(outputDir + "/Embeddings/*")
         Array[File] plotFiles = glob(outputDir + "/Plots/*")
         File projectFile = outputDir + "/Save-ArchR-Project.rds"
+        File? fileList = "filelist-all.txt"
     }
 
     runtime {
