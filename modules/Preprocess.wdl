@@ -7,7 +7,7 @@ task RunTutorial {
         String outputDir = "outs"
     }
 
-    String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617b"
+    String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617c"
 
     command {
         set -euo pipefail
@@ -49,7 +49,7 @@ task Run {
         String outputDir = "outs"
     }
 
-    String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617b"
+    String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617c"
 
     command {
         set -euo pipefail
