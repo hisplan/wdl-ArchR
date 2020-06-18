@@ -1,3 +1,4 @@
 {
-    "RunTutorial.tutorialCode": "s3://dp-lab-test/archr/run-tutorial.R"
+    "RunTutorial.tutorialCode": "s3://dp-lab-test/archr/run-tutorial.R",
+    "RunTutorial.outputDir": "outs"
 }

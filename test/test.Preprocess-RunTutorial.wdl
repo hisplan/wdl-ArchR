@@ -6,11 +6,13 @@ workflow RunTutorial {
 
     input {
         File tutorialCode
+        String outputDir
     }
 
     call Preprocess.RunTutorial {
         input:
-            tutorialCode = tutorialCode
+            tutorialCode = tutorialCode,
+            outputDir = outputDir
     }
 
     output {
