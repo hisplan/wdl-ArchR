@@ -4,7 +4,7 @@ task RunTutorial {
 
     input {
         File tutorialCode
-        String outputDir = "outs"
+        String outputDir
     }
 
     String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617c"
@@ -77,6 +77,6 @@ task Run {
         docker: dockerImage
         # disks: "local-disk 100 HDD"
         cpu: numCores
-        memory: "64 GB"
+        memory: "128 GB"
     }
 }
