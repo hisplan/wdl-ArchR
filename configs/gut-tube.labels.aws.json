@@ -1,0 +1,9 @@
+{
+    "pipelineType": "ArchR",
+    "project": "Gut Tube",
+    "sample": "Gut Tube",
+    "owner": "chunj",
+    "destination": "s3://dp-lab-batch/outputs/ArchR/GutTube",
+    "transfer": "-",
+    "comment": "ArchR"
+}

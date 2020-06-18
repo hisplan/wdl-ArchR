@@ -1,0 +1,33 @@
+{
+    "ArchR.genome": "mm10",
+    "ArchR.fragmentsFiles": [
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib1_Ant-1/CR-results/count/outs/fragments.tsv.gz",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib2_Ant-2/CR-results/count/outs/fragments.tsv.gz",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/LIb3_Post-1/CR-results/count/outs/fragments.tsv.gz",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib4_Post-2/CR-results/count/outs/fragments.tsv.gz",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib5_guttube_GFPpos_1/CR-results/count/outs/fragments.tsv.gz",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib6_guttube_GFPneg_1/CR-results/count/outs/fragments.tsv.gz",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/LIb7_guttube_GFPpos_2/CR-results/count/outs/fragments.tsv.gz",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib8_guttube_GFPneg_2/CR-results/count/outs/fragments.tsv.gz"
+    ],
+    "ArchR.fragmentsIndexFiles": [
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib1_Ant-1/CR-results/count/outs/fragments.tsv.gz.tbi",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib2_Ant-2/CR-results/count/outs/fragments.tsv.gz.tbi",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/LIb3_Post-1/CR-results/count/outs/fragments.tsv.gz.tbi",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib4_Post-2/CR-results/count/outs/fragments.tsv.gz.tbi",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib5_guttube_GFPpos_1/CR-results/count/outs/fragments.tsv.gz.tbi",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib6_guttube_GFPneg_1/CR-results/count/outs/fragments.tsv.gz.tbi",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/LIb7_guttube_GFPpos_2/CR-results/count/outs/fragments.tsv.gz.tbi",
+        "s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/Lib8_guttube_GFPneg_2/CR-results/count/outs/fragments.tsv.gz.tbi"
+    ],
+    "ArchR.sampleNames": [
+        "Lib1_Ant-1",
+        "Lib2_Ant-2",
+        "LIb3_Post-1",
+        "Lib4_Post-2",
+        "Lib5_guttube_GFPpos_1",
+        "Lib6_guttube_GFPneg_1",
+        "LIb7_guttube_GFPpos_2",
+        "Lib8_guttube_GFPneg_2"
+    ]
+}
