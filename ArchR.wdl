@@ -1,6 +1,7 @@
 version 1.0
 
 import "modules/Preprocess.wdl" as Preprocess
+import "modules/ConstructAnnData.wdl" as ConstructAnnData
 
 workflow ArchR {
 
@@ -19,6 +20,11 @@ workflow ArchR {
             genome = genome
     }
 
+    call ConstructAnnData.ConstructAnnData {
+        input:
+            exports = Run.exports
+    }
+
     output {
         Array[File] logFiles = Run.logFiles
         Array[File] qcFiles = Run.qcFiles
@@ -27,6 +33,7 @@ workflow ArchR {
         Array[File] embeddingFiles = Run.embeddingFiles
         Array[File] plotFiles = Run.plotFiles
         File projectFile = Run.projectFile
+        File adata = ConstructAnnData.adata
         File? fileList = Run.fileList
     }
 }

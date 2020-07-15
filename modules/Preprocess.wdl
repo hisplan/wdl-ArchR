@@ -7,7 +7,7 @@ task RunTutorial {
         String outputDir
     }
 
-    String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617c"
+    String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617e"
 
     command {
         set -euo pipefail
@@ -49,7 +49,7 @@ task Run {
         String outputDir = "outs"
     }
 
-    String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617c"
+    String dockerImage = "hisplan/archr:0.9.5-snapshot-20200617e"
 
     command {
         set -euo pipefail
@@ -58,6 +58,8 @@ task Run {
         echo "~{sep='\n' sampleNames}" > sample-names.txt
 
         Rscript /opt/preprocess.R input-files.txt sample-names.txt ~{genome} ~{numCores}
+
+        tar cvzf exports.tgz outs2/*
 
         find . > filelist-all.txt
     }
@@ -70,6 +72,7 @@ task Run {
         Array[File] embeddingFiles = glob(outputDir + "/Embeddings/*")
         Array[File] plotFiles = glob(outputDir + "/Plots/*")
         File projectFile = outputDir + "/Save-ArchR-Project.rds"
+        File exports = "exports.tgz"
         File? fileList = "filelist-all.txt"
     }
 

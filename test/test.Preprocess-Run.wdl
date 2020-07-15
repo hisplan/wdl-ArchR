@@ -27,6 +27,7 @@ workflow Run {
         Array[File] embeddingFiles = Run.embeddingFiles
         Array[File] plotFiles = Run.plotFiles
         File projectFile = Run.projectFile
+        File exports = Run.exports
         File? fileList = Run.fileList
     }
 }
