@@ -14,5 +14,6 @@
         "CD34_BMMC",
         "PBMC"
     ],
-    "ArchR.genome": "hg19"
+    "ArchR.genome": "hg19",
+    "ArchR.numCores": 1
 }
