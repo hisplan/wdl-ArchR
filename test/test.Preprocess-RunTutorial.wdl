@@ -18,6 +18,7 @@ workflow RunTutorial {
     output {
         Array[File] logFiles = RunTutorial.logFiles
         Array[File] qcFiles = RunTutorial.qcFiles
+        Array[File] arrowFiles0 = RunTutorial.arrowFiles0
         Array[File] arrowFiles = RunTutorial.arrowFiles
         Array[File] lsiFiles = RunTutorial.lsiFiles
         Array[File] embeddingFiles = RunTutorial.embeddingFiles

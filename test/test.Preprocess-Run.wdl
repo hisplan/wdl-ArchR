@@ -22,11 +22,13 @@ workflow Run {
     output {
         Array[File] logFiles = Run.logFiles
         Array[File] qcFiles = Run.qcFiles
-        Array[File] arrowFiles = Run.arrowFiles
-        Array[File] lsiFiles = Run.lsiFiles
-        Array[File] embeddingFiles = Run.embeddingFiles
-        Array[File] plotFiles = Run.plotFiles
-        File projectFile = Run.projectFile
+        Array[File] arrowFiles0 = Run.arrowFiles0
+        # Array[File] arrowFiles = Run.arrowFiles
+        # Array[File] lsiFiles = Run.lsiFiles
+        # Array[File] embeddingFiles = Run.embeddingFiles
+        # Array[File] plotFiles = Run.plotFiles
+        # File projectFile = Run.projectFile
+        File projectOutputs = Run.projectOutputs
         File exports = Run.exports
         File? fileList = Run.fileList
     }
