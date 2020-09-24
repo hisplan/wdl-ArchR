@@ -10,6 +10,9 @@ workflow ArchR {
         Array[File] fragmentsIndexFiles
         Array[String] sampleNames
         String genome
+
+        # ArchR unstable with multiprocessing
+        Int numCores = 1
     }
 
     call Preprocess.Run {
@@ -17,7 +20,8 @@ workflow ArchR {
             fragmentsFiles = fragmentsFiles,
             fragmentsIndexFiles = fragmentsIndexFiles,
             sampleNames = sampleNames,
-            genome = genome
+            genome = genome,
+            numCores = numCores
     }
 
     call ConstructAnnData.ConstructAnnData {
@@ -28,11 +32,13 @@ workflow ArchR {
     output {
         Array[File] logFiles = Run.logFiles
         Array[File] qcFiles = Run.qcFiles
-        Array[File] arrowFiles = Run.arrowFiles
-        Array[File] lsiFiles = Run.lsiFiles
-        Array[File] embeddingFiles = Run.embeddingFiles
-        Array[File] plotFiles = Run.plotFiles
-        File projectFile = Run.projectFile
+        Array[File] arrowFiles0 = Run.arrowFiles0
+        # Array[File] arrowFiles = Run.arrowFiles
+        # Array[File] lsiFiles = Run.lsiFiles
+        # Array[File] embeddingFiles = Run.embeddingFiles
+        # Array[File] plotFiles = Run.plotFiles
+        # File projectFile = Run.projectFile
+        File projectOutputs = Run.projectOutputs
         File adata = ConstructAnnData.adata
         File? fileList = Run.fileList
     }
