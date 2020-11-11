@@ -1,5 +1,7 @@
 version 1.0
 
+import "modules/ReformatFragments.wdl" as ReformatFragments
+import "modules/TabixfyFragments.wdl" as TabixfyFragments
 import "modules/Preprocess.wdl" as Preprocess
 import "modules/ConstructAnnData.wdl" as ConstructAnnData
 
@@ -12,13 +14,25 @@ workflow ArchR {
         String genome
 
         # ArchR unstable with multiprocessing
-        Int numCores = 1
+        Int numCores
+    }
+
+    scatter (fragments in fragmentsFiles) {
+        call ReformatFragments.ReformatFragments {
+            input:
+                fragments = fragments,
+                numCores = numCores
+        }
+        call TabixfyFragments.TabixfyFragments {
+            input:
+                fragments = ReformatFragments.out
+        }
     }
 
     call Preprocess.Run {
         input:
-            fragmentsFiles = fragmentsFiles,
-            fragmentsIndexFiles = fragmentsIndexFiles,
+            fragmentsFiles = ReformatFragments.out,
+            fragmentsIndexFiles = TabixfyFragments.out,
             sampleNames = sampleNames,
             genome = genome,
             numCores = numCores

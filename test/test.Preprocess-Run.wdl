@@ -9,6 +9,7 @@ workflow Run {
         Array[File] fragmentsIndexFiles
         Array[String] sampleNames
         String genome
+        Int numCores
     }
 
     call Preprocess.Run {
@@ -16,7 +17,8 @@ workflow Run {
             fragmentsFiles = fragmentsFiles,
             fragmentsIndexFiles = fragmentsIndexFiles,
             sampleNames = sampleNames,
-            genome = genome
+            genome = genome,
+            numCores = numCores
     }
 
     output {

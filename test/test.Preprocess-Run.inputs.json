@@ -14,5 +14,6 @@
         "CD34_BMMC",
         "PBMC"
     ],
-    "Run.genome": "hg19"
+    "Run.genome": "hg19",
+    "Run.numCores": 3
 }

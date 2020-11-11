@@ -46,7 +46,7 @@ task Run {
         Array[File] fragmentsIndexFiles
         Array[String] sampleNames
         String genome
-        Int numCores = 16
+        Int numCores
         String outputDir = "outs"
     }
 
@@ -109,6 +109,6 @@ task Run {
         docker: dockerImage
         # disks: "local-disk 100 HDD"
         cpu: numCores
-        memory: "128 GB"
+        memory: "100 GB"
     }
 }
