@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-modules="ConstructAnnData Preprocess-Run Preprocess-RunTutorial"
+modules="TabixfyFragments ReformatFragments ConstructAnnData Preprocess-Run Preprocess-RunTutorial"
 
 for module_name in $modules
 do

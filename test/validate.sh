@@ -3,7 +3,7 @@
 #hack: get dependency set up
 ln -s ../modules/ modules
 
-modules="ConstructAnnData Preprocess-Run Preprocess-RunTutorial"
+modules="TabixfyFragments ReformatFragments ConstructAnnData Preprocess-Run Preprocess-RunTutorial"
 
 for module_name in $modules
 do
