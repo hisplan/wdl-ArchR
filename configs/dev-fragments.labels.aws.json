@@ -1,5 +1,5 @@
 {
-    "pipelineType": "ArchR",
+    "pipelineType": "ArchRSA",
     "project": "Dev",
     "sample": "BMMC,CD34_BMMC,PBMC",
     "owner": "chunj",

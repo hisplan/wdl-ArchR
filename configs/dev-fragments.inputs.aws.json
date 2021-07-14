@@ -1,19 +1,20 @@
 {
-    "ArchR.fragmentsFiles": [
+    "ArchRSA.fragmentsFiles": [
         "s3://dp-lab-test/archr/datasets/tutorial/scATAC_BMMC_R1.fragments.tsv.gz",
         "s3://dp-lab-test/archr/datasets/tutorial/scATAC_CD34_BMMC_R1.fragments.tsv.gz",
         "s3://dp-lab-test/archr/datasets/tutorial/scATAC_PBMC_R1.fragments.tsv.gz"
     ],
-    "ArchR.fragmentsIndexFiles": [
+    "ArchRSA.fragmentsIndexFiles": [
         "s3://dp-lab-test/archr/datasets/tutorial/scATAC_BMMC_R1.fragments.tsv.gz.tbi",
         "s3://dp-lab-test/archr/datasets/tutorial/scATAC_CD34_BMMC_R1.fragments.tsv.gz.tbi",
         "s3://dp-lab-test/archr/datasets/tutorial/scATAC_PBMC_R1.fragments.tsv.gz.tbi"
     ],
-    "ArchR.sampleNames": [
+    "ArchRSA.sampleNames": [
         "BMMC",
         "CD34_BMMC",
         "PBMC"
     ],
-    "ArchR.genome": "hg19",
-    "ArchR.numCores": 1
+    "ArchRSA.genome": "hg19",
+    "ArchRSA.numCores": 1,
+    "ArchRSA.reformatFragments": false
 }

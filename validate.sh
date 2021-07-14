@@ -1,6 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -e
 
 java -jar ~/Applications/womtool.jar \
     validate \
-    ArchR.wdl \
-    --inputs ./configs/dev.inputs.aws.json
+    ArchRSA.wdl \
+    --inputs ./configs/dev-fragments.inputs.aws.json
+
+java -jar ~/Applications/womtool.jar \
+    validate \
+    ArchRCR.wdl \
+    --inputs ./configs/dev-fastq.inputs.aws.json

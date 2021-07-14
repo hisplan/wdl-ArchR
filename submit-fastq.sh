@@ -29,12 +29,9 @@ then
     exit 1
 fi
 
-rm -rf ArchR.deps.zip
-zip ArchR.deps.zip modules modules/*
-
 cromwell-tools submit \
     --secrets-file ${service_account_key} \
-    --wdl ArchR.wdl \
+    --wdl ArchRCR.wdl \
     --inputs-files ${inputs_file} \
     --deps-file ArchR.deps.zip \
     --label-file ${labels_file} \
