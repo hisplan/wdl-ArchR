@@ -28,24 +28,34 @@ def split_s3_uri(s3_uri):
     return match.groups(1)
 
 
-def generate(s3_prefix, sample_names, genome, check_exists):
+def generate(s3_prefix, sample_names, genome, check_exists, software):
 
     inputs = defaultdict(list)
 
-    inputs["ArchR.genome"] = genome
-
     for sample_name in sample_names:
 
-        s3_uri = f"{s3_prefix}/{sample_name}/CR-results/count/outs/fragments.tsv.gz"
+
+        if software == "cr":
+            # cellranger-atac v1.1 old
+            s3_uri = f"{s3_prefix}/{sample_name}/CR-results/count/outs/fragments.tsv.gz"
+        elif software == "arc":
+            # cellranger-arc v2
+            s3_uri = f"{s3_prefix}/{sample_name}/arc-results/outs/atac_fragments.tsv.gz"
+        else:
+            raise Exception("Unregonized processing software!")
 
         if check_exists:
             bucket, key = split_s3_uri(s3_uri)
             if check_if_exists(bucket, key) != 0:
                 raise Exception("Not found!", s3_uri)
 
-        inputs["ArchR.fragmentsFiles"].append(s3_uri)
-        inputs["ArchR.fragmentsIndexFiles"].append(s3_uri + ".tbi")
-        inputs["ArchR.sampleNames"].append(sample_name)
+        inputs["ArchRSA.sampleNames"].append(sample_name)
+        inputs["ArchRSA.fragmentsFiles"].append(s3_uri)
+        inputs["ArchRSA.fragmentsIndexFiles"].append(s3_uri + ".tbi")
+
+    inputs["ArchRSA.genome"] = genome
+    inputs["ArchRSA.numCores"] = 1
+    inputs["ArchRSA.reformatFragments"] = False
 
     print(json.dumps(inputs, indent=4))
 
@@ -58,7 +68,7 @@ def parse_arguments():
         "--s3-prefix",
         action="store",
         dest="s3_prefix",
-        help="s3://dp-lab-data/collaborators/${lab}/${project}",
+        help="s3://dp-lab-data/collaborators/${lab}/${project} with no trailing slash",
         required=True,
     )
 
@@ -68,6 +78,15 @@ def parse_arguments():
         nargs="+",
         dest="sample_names",
         help="list of samples (comma-separated)",
+        required=True,
+    )
+
+    parser.add_argument(
+        "--software",
+        action="store",
+        nargs="+",
+        dest="software",
+        help="processing software used (CR: Cell Ranger ATAC, arc: Cell Ranger ARC",
         required=True,
     )
 
