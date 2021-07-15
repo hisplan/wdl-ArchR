@@ -6,7 +6,7 @@ task ConstructAnnData {
         File exports
     }
 
-    String dockerImage = "hisplan/archr2adata:0.0.1"
+    String dockerImage = "hisplan/archr2adata:0.0.2"
 
     command <<<
         set -euo pipefail
