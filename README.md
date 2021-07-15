@@ -66,6 +66,7 @@ $ aws s3 ls s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube/
 $ python create_config.py \
     --s3-prefix s3://dp-lab-data/collaborators/hadjanta/scATAC_embryo_gut_tube \
     --genome mm10 \
+    --software cr \
     --sample-names Lib1_Ant-1 Lib2_Ant-2 LIb3_Post-1 Lib4_Post-2 Lib5_guttube_GFPpos_1 Lib6_guttube_GFPneg_1 LIb7_guttube_GFPpos_2 Lib8_guttube_GFPneg_2
 ```
 
