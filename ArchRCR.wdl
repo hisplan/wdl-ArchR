@@ -16,6 +16,8 @@ workflow ArchRCR {
         Map[String, String] genomeCellRanger
         String genomeArchR
 
+        Boolean reformatFragments = false
+
         # ArchR unstable with multiprocessing
         Int numCores
     }
@@ -28,21 +30,27 @@ workflow ArchRCR {
             fastqFiles = fastqFiles
     }
 
-    call ReformatFragments.ReformatFragments {
-        input:
-            fragments = Count.outFragments,
-            numCores = numCores
+    # reformat fragments only if requested
+    if (reformatFragments) {
+        call ReformatFragments.ReformatFragments {
+            input:
+                fragments = Count.outFragments,
+                numCores = numCores
+        }
+
+        call TabixfyFragments.TabixfyFragments {
+            input:
+                fragments = ReformatFragments.out
+        }
     }
 
-    call TabixfyFragments.TabixfyFragments {
-        input:
-            fragments = ReformatFragments.out
-    }
+    File finalFragments = select_first([ReformatFragments.out, Count.outFragments])
+    File finalFragmentsIndex = select_first([TabixfyFragments.out, Count.outFragmentsIndex])
 
     call Preprocess.Run {
         input:
-            fragmentsFiles = [ReformatFragments.out],
-            fragmentsIndexFiles = [TabixfyFragments.out],
+            fragmentsFiles = [finalFragments],
+            fragmentsIndexFiles = [finalFragmentsIndex],
             sampleNames = [sampleName],
             genome = genomeArchR,
             numCores = numCores
@@ -58,20 +66,32 @@ workflow ArchRCR {
         # Cell Ranger ATAC output
         File outBam = Count.outBam
         File outBai = Count.outBai
+
         File outSummaryJson = Count.outSummaryJson
         File outSummaryCsv = Count.outSummaryCsv
         File outSummaryHtml = Count.outSummaryHtml
+        File outPerBarcodeMetrics = Count.outPerBarcodeMetrics
+
         File outPeaks = Count.outPeaks
         File? outAnalysis = Count.outAnalysis
-        Array[File] outRawPeakBCMatrix = Count.outRawPeakBCMatrix
-        Array[File] outFilteredPeakBCMatrix = Count.outFilteredPeakBCMatrix
-        Array[File] outFilteredTFBCMatrix = Count.outFilteredTFBCMatrix
+
+        Array[File] outRawPeakBCMtx = Count.outRawPeakBCMtx
+        File outRawPeakBCMtxHdf5 = Count.outRawPeakBCMtxHdf5
+
+        Array[File] outFilteredPeakBCMtx = Count.outFilteredPeakBCMtx
+        File outFilteredPeakBCMtxHdf5 = Count.outFilteredPeakBCMtxHdf5
+
+        Array[File] outFilteredTFBCMtx = Count.outFilteredTFBCMtx
+        File outFilteredTFBCMtxHdf5 = Count.outFilteredTFBCMtxHdf5
+
         File outLoupe = Count.outLoupe
-        Array[File] outHDF5 = Count.outHDF5
+
         File outFragments = Count.outFragments
         File outFragmentsIndex = Count.outFragmentsIndex
+
         File outPeakAnnotation = Count.outPeakAnnotation
-        File outPerBarcodeMetrics = Count.outPerBarcodeMetrics
+        File outPeakMotifMapping = Count.outPeakMotifMapping
+
         File outPipestanceMeta = Count.outPipestanceMeta
 
         # modified ArchR output
