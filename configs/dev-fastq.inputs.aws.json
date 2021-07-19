@@ -12,8 +12,8 @@
         "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L002_R3_001.fastq.gz"
     ],
     "ArchRCR.genomeCellRanger": {
-        "name": "GRCh38-1.2.0",
-        "location": "http://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-atac-GRCh38-1.2.0.tar.gz"
+        "name": "GRCh38-2020-A-2.0.0",
+        "location": "https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-2020-A-2.0.0.tar.gz"
     },
     "ArchRCR.genomeArchR": "hg38",
     "ArchRCR.numCores": 1
