@@ -9,8 +9,8 @@ task Count {
         Map[String, String] referenceGenome
     }
 
-    String cellRangerAtacVersion = "1.2.0"
-    String dockerImage = "hisplan/cellranger-atac:" + cellRangerAtacVersion
+    String cellRangerAtacVersion = "2.0.0"
+    String dockerImage = "hisplan/cromwell-cellranger-atac:" + cellRangerAtacVersion
     Float inputSize = size(fastqFiles, "GiB")
 
     # ~{sampleName} : the top-level output directory containing pipeline metadata
@@ -23,7 +23,6 @@ task Count {
         export MRO_DISK_SPACE_CHECK=disable
 
         df -h
-        find .
 
         path_input=`dirname ~{fastqFiles[0]}`
 
@@ -36,7 +35,6 @@ task Count {
         chmod -R +r reference
         rm -rf reference.tgz
 
-        find .
         df -h
 
         # run pipeline
@@ -58,23 +56,33 @@ task Count {
     output {
         File outBam = outBase + "/possorted_bam.bam"
         File outBai = outBase + "/possorted_bam.bam.bai"
+
         File outSummaryJson = outBase + "/summary.json"
         File outSummaryCsv = outBase + "/summary.csv"
         File outSummaryHtml = outBase + "/web_summary.html"
+        File outPerBarcodeMetrics = outBase + "/singlecell.csv"
+
         File outPeaks = outBase + "/peaks.bed"
         File? outAnalysis = outBase + "/analysis.tgz"
-        Array[File] outRawPeakBCMatrix = glob(outBase + "/raw_peak_bc_matrix/*")
-        Array[File] outFilteredPeakBCMatrix = glob(outBase + "/filtered_peak_bc_matrix/*")
-        Array[File] outFilteredTFBCMatrix = glob(outBase + "/filtered_tf_bc_matrix/*")
+
+        Array[File] outRawPeakBCMtx = glob(outBase + "/raw_peak_bc_matrix/*")
+        File outRawPeakBCMtxHdf5 = outBase + "/raw_peak_bc_matrix.h5"
+
+        Array[File] outFilteredPeakBCMtx = glob(outBase + "/filtered_peak_bc_matrix/*")
+        File outFilteredPeakBCMtxHdf5 = outBase + "/filtered_peak_bc_matrix.h5"
+
+        Array[File] outFilteredTFBCMtx = glob(outBase + "/filtered_tf_bc_matrix/*")
+        File outFilteredTFBCMtxHdf5 = outBase + "/filtered_tf_bc_matrix.h5"
+
         File outLoupe = outBase + "/cloupe.cloupe"
-        Array[File] outHDF5 = glob(outBase + "/*.h5")
+
         File outFragments = outBase + "/fragments.tsv.gz"
         File outFragmentsIndex = outBase + "/fragments.tsv.gz.tbi"
-        File outPeakAnnotation = outBase + "/peak_annotation.tsv"
-        File outPerBarcodeMetrics = outBase + "/singlecell.csv"
-        File outPipestanceMeta = outBase + "/pipestanceMeta.tgz"
 
-        File outReferenceIndex = "reference/fasta/genome.fa.fai"
+        File outPeakAnnotation = outBase + "/peak_annotation.tsv"
+        File outPeakMotifMapping = outBase + "/peak_motif_mapping.bed"
+
+        File outPipestanceMeta = outBase + "/pipestanceMeta.tgz"
     }
 
     runtime {

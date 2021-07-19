@@ -22,22 +22,33 @@ workflow Count {
     output {
         File outBam = Count.outBam
         File outBai = Count.outBai
+
         File outSummaryJson = Count.outSummaryJson
         File outSummaryCsv = Count.outSummaryCsv
         File outSummaryHtml = Count.outSummaryHtml
+        File outPerBarcodeMetrics = Count.outPerBarcodeMetrics
+
         File outPeaks = Count.outPeaks
         File? outAnalysis = Count.outAnalysis
-        Array[File] outRawPeakBCMatrix = Count.outRawPeakBCMatrix
-        Array[File] outFilteredPeakBCMatrix = Count.outFilteredPeakBCMatrix
-        Array[File] outFilteredTFBCMatrix = Count.outFilteredTFBCMatrix
+        
+        Array[File] outRawPeakBCMtx = Count.outRawPeakBCMtx
+        File outRawPeakBCMtxHdf5 = Count.outRawPeakBCMtxHdf5
+
+        Array[File] outFilteredPeakBCMtx = Count.outFilteredPeakBCMtx
+        File outFilteredPeakBCMtxHdf5 = Count.outFilteredPeakBCMtxHdf5
+
+        Array[File] outFilteredTFBCMtx = Count.outFilteredTFBCMtx
+        File outFilteredTFBCMtxHdf5 = Count.outFilteredTFBCMtxHdf5
+
         File outLoupe = Count.outLoupe
-        Array[File] outHDF5 = Count.outHDF5
+        
         File outFragments = Count.outFragments
         File outFragmentsIndex = Count.outFragmentsIndex
+        
         File outPeakAnnotation = Count.outPeakAnnotation
-        File outPerBarcodeMetrics = Count.outPerBarcodeMetrics
+        File outPeakMotifMapping = Count.outPeakMotifMapping
+
         File outPipestanceMeta = Count.outPipestanceMeta
 
-        File outReferenceIndex = Count.outReferenceIndex
     }
 }

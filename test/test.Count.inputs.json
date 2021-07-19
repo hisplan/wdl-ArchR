@@ -3,16 +3,12 @@
     "Count.fastqNames": "atac_pbmc_500_v1",
     "Count.fastqFiles": [
         "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L001_I1_001.fastq.gz",
-        "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L002_I1_001.fastq.gz",
         "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L001_R1_001.fastq.gz",
-        "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L002_R1_001.fastq.gz",
         "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L001_R2_001.fastq.gz",
-        "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L002_R2_001.fastq.gz",
-        "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L001_R3_001.fastq.gz",
-        "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L002_R3_001.fastq.gz"
+        "s3://dp-lab-home/chunj/scATAC-seq/atac_pbmc_500_v1_fastqs/atac_pbmc_500_v1_S1_L001_R3_001.fastq.gz"
     ],
     "Count.referenceGenome": {
-        "name": "GRCh38-1.2.0",
-        "location": "http://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-atac-GRCh38-1.2.0.tar.gz"
+        "name": "GRCh38-2020-A-2.0.0",
+        "location": "https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-2020-A-2.0.0.tar.gz"
     }
 }
