@@ -1,5 +1,8 @@
 # wdl-ArchR
 
+- `ArchRSA`: ArchR Stand-Alone (using fragments as input)
+- `ArchRCR`: Cell Ranger ATAC + ArchR (using FASTQ as input)
+
 ## Dependencies
 
 ```bash
@@ -7,9 +10,14 @@ conda install -c bioconda cromwell-tools
 conda install -c cyclus java-jre
 ```
 
-## Using FASTQ as Input
+## ArchRSA: Using FASTQ as Input
 
 This will run Cell Ranger ATAC first to generate fragments file, then feed the fragments file into ArchR as input.
+
+References:
+
+- GRCh38 Reference - 2020-A-2.0.0 (May 3, 2021): https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-2020-A-2.0.0.tar.gz
+- mm10 Reference - 2020-A-2.0.0 (May 3, 2021): https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-mm10-2020-A-2.0.0.tar.gz
 
 ### Submitting Jobs
 
@@ -21,7 +29,7 @@ $ ./submit-fastq.sh \
     -o ArchR.options.aws.json
 ```
 
-## Using Fragments as Input
+## ArchRCR: Using Fragments as Input
 
 This is useful if you already have fragments file in your hand
 
