@@ -3,12 +3,13 @@
 - `ArchRSA`: ArchR Stand-Alone (using fragments as input)
 - `ArchRCR`: Cell Ranger ATAC + ArchR (using FASTQ as input)
 
-## Dependencies
+## License
 
-```bash
-conda install -c bioconda cromwell-tools
-conda install -c cyclus java-jre
-```
+The pipeline code is available to everyone under the standard [MIT license](./LICENSE). However, the pipeline internally uses 10x software for certain steps if necessary, so please make sure that you read and agree to [10x End User Software License](https://www.10xgenomics.com/end-user-software-license-agreement).
+
+## Setup
+
+The pipeline is a part of SCING (Single-Cell pIpeliNe Garden; pronounced as "sing" /siŋ/). For setup, please refer to [this page](https://github.com/hisplan/scing). All the instructions below is given under the assumption that you have already configured SCING in your environment.
 
 ## ArchRSA: Using FASTQ as Input
 
