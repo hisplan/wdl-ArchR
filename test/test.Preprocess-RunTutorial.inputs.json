@@ -1,4 +1,5 @@
 {
     "RunTutorial.tutorialCode": "s3://dp-lab-test/archr/run-tutorial.R",
-    "RunTutorial.outputDir": "outs"
+    "RunTutorial.outputDir": "outs",
+    "RunTutorial.dockerRegistry": "quay.io/hisplan"
 }

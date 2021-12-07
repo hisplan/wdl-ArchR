@@ -18,6 +18,9 @@ workflow ArchRSA {
 
         # ArchR unstable with multiprocessing
         Int numCores
+
+        # docker-related
+        String dockerRegistry
     }
 
     # reformat fragments only if requested
@@ -26,11 +29,13 @@ workflow ArchRSA {
             call ReformatFragments.ReformatFragments {
                 input:
                     fragments = fragments,
-                    numCores = numCores
+                    numCores = numCores,
+                    dockerRegistry = dockerRegistry
             }
             call TabixfyFragments.TabixfyFragments {
                 input:
-                    fragments = ReformatFragments.out
+                    fragments = ReformatFragments.out,
+                    dockerRegistry = dockerRegistry
             }
         }
     }
@@ -44,12 +49,14 @@ workflow ArchRSA {
             fragmentsIndexFiles = finalFragmentsIndex,
             sampleNames = sampleNames,
             genome = genome,
-            numCores = numCores
+            numCores = numCores,
+            dockerRegistry = dockerRegistry
     }
 
     call ConstructAnnData.ConstructAnnData {
         input:
-            exports = Run.exports
+            exports = Run.exports,
+            dockerRegistry = dockerRegistry
     }
 
     output {

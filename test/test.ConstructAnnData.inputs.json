@@ -1,3 +1,4 @@
 {
-    "ConstructAnnData.exports": "s3://dp-lab-test/archr/exports.tgz"
+    "ConstructAnnData.exports": "s3://dp-lab-test/archr/exports.tgz",
+    "ConstructAnnData.dockerRegistry": "quay.io/hisplan"
 }

@@ -16,5 +16,6 @@
         "location": "https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-2020-A-2.0.0.tar.gz"
     },
     "ArchRCR.genomeArchR": "hg38",
-    "ArchRCR.numCores": 1
+    "ArchRCR.numCores": 1,
+    "ArchRCR.dockerRegistry": "quay.io/hisplan"
 }

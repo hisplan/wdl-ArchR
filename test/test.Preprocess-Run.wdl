@@ -10,6 +10,9 @@ workflow Run {
         Array[String] sampleNames
         String genome
         Int numCores
+
+        # docker-related
+        String dockerRegistry
     }
 
     call Preprocess.Run {
@@ -18,7 +21,8 @@ workflow Run {
             fragmentsIndexFiles = fragmentsIndexFiles,
             sampleNames = sampleNames,
             genome = genome,
-            numCores = numCores
+            numCores = numCores,
+            dockerRegistry = dockerRegistry
     }
 
     output {

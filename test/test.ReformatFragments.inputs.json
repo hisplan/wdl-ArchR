@@ -1,4 +1,5 @@
 {
     "ReformatFragments.fragments": "s3://dp-lab-home/ea2690/AMLATAC/BM_08022017/fragments.tsv.gz",
-    "ReformatFragments.numCores": 3
+    "ReformatFragments.numCores": 3,
+    "ReformatFragments.dockerRegistry": "quay.io/hisplan"
 }

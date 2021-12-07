@@ -10,5 +10,6 @@
     "Count.referenceGenome": {
         "name": "GRCh38-2020-A-2.0.0",
         "location": "https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-2020-A-2.0.0.tar.gz"
-    }
+    },
+    "Count.dockerRegistry": "quay.io/hisplan"
 }

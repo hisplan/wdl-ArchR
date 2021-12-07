@@ -6,10 +6,14 @@ workflow TabixfyFragments {
 
     input {
         File fragments
+
+        # docker-related
+        String dockerRegistry
     }
 
     call TabixfyFragments.TabixfyFragments {
         input:
-            fragments = fragments
+            fragments = fragments,
+            dockerRegistry = dockerRegistry
     }
 }

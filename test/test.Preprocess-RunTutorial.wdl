@@ -7,12 +7,16 @@ workflow RunTutorial {
     input {
         File tutorialCode
         String outputDir
+
+        # docker-related
+        String dockerRegistry
     }
 
     call Preprocess.RunTutorial {
         input:
             tutorialCode = tutorialCode,
-            outputDir = outputDir
+            outputDir = outputDir,
+            dockerRegistry = dockerRegistry
     }
 
     output {

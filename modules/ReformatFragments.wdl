@@ -5,9 +5,12 @@ task ReformatFragments {
     input {
         File fragments
         Int numCores
+
+        # docker-related
+        String dockerRegistry
     }
 
-    String dockerImage = "hisplan/archr:0.9.x-snapshot-20200922"
+    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922"
     Float inputSize = size(fragments, "GiB")
     String outFilename = basename(fragments, ".tsv.gz") + "-Reformat.tsv.gz"
 

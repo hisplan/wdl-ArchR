@@ -4,9 +4,12 @@ task ConstructAnnData {
 
     input {
         File exports
+
+        # docker-related
+        String dockerRegistry
     }
 
-    String dockerImage = "hisplan/archr2adata:0.0.2"
+    String dockerImage = dockerRegistry + "/archr2adata:0.0.2"
 
     command <<<
         set -euo pipefail

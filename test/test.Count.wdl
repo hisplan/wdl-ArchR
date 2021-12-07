@@ -9,6 +9,9 @@ workflow Count {
         String fastqNames
         Array[File] fastqFiles
         Map[String, String] referenceGenome
+
+        # docker-related
+        String dockerRegistry
     }
 
     call Count.Count {
@@ -16,7 +19,8 @@ workflow Count {
             sampleName = sampleName,
             fastqNames = fastqNames,
             referenceGenome = referenceGenome,
-            fastqFiles = fastqFiles
+            fastqFiles = fastqFiles,
+            dockerRegistry = dockerRegistry
     }
 
     output {
@@ -30,7 +34,7 @@ workflow Count {
 
         File outPeaks = Count.outPeaks
         File? outAnalysis = Count.outAnalysis
-        
+
         Array[File] outRawPeakBCMtx = Count.outRawPeakBCMtx
         File outRawPeakBCMtxHdf5 = Count.outRawPeakBCMtxHdf5
 
@@ -41,10 +45,10 @@ workflow Count {
         File outFilteredTFBCMtxHdf5 = Count.outFilteredTFBCMtxHdf5
 
         File outLoupe = Count.outLoupe
-        
+
         File outFragments = Count.outFragments
         File outFragmentsIndex = Count.outFragmentsIndex
-        
+
         File outPeakAnnotation = Count.outPeakAnnotation
         File outPeakMotifMapping = Count.outPeakMotifMapping
 

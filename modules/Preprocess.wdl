@@ -5,9 +5,12 @@ task RunTutorial {
     input {
         File tutorialCode
         String outputDir
+
+        # docker-related
+        String dockerRegistry
     }
 
-    String dockerImage = "hisplan/archr:0.9.x-snapshot-20200922"
+    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922"
 
     command {
         set -euo pipefail
@@ -48,9 +51,12 @@ task Run {
         String genome
         Int numCores
         String outputDir = "outs"
+
+        # docker-related
+        String dockerRegistry
     }
 
-    String dockerImage = "hisplan/archr:0.9.x-snapshot-20200922"
+    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922"
 
     command <<<
         set -euo pipefail
@@ -93,7 +99,7 @@ task Run {
 
     output {
         Array[File] logFiles = glob("ArchRLogs/*.log")
-        Array[File] qcFiles = glob("QualityControl/*/*")        
+        Array[File] qcFiles = glob("QualityControl/*/*")
         Array[File] arrowFiles0 = glob("*.arrow") # original arrow files
         # Array[File] arrowFiles = glob(outputDir + "/ArrowFiles/*.arrow")
         # Array[File] lsiFiles = glob(outputDir + "/IterativeLSI/*")

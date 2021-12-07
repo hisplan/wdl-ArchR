@@ -6,11 +6,15 @@ workflow ConstructAnnData {
 
     input {
         File exports
+
+        # docker-related
+        String dockerRegistry        
     }
 
     call ConstructAnnData.ConstructAnnData {
         input:
-            exports = exports
+            exports = exports,
+            dockerRegistry = dockerRegistry            
     }
 
     output {

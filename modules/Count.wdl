@@ -7,10 +7,13 @@ task Count {
         String fastqNames
         Array[File] fastqFiles
         Map[String, String] referenceGenome
+
+        # docker-related
+        String dockerRegistry
     }
 
     String cellRangerAtacVersion = "2.0.0"
-    String dockerImage = "hisplan/cromwell-cellranger-atac:" + cellRangerAtacVersion
+    String dockerImage = dockerRegistry + "/cromwell-cellranger-atac:" + cellRangerAtacVersion
     Float inputSize = size(fastqFiles, "GiB")
 
     # ~{sampleName} : the top-level output directory containing pipeline metadata

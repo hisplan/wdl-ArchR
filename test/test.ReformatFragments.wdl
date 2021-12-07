@@ -7,11 +7,15 @@ workflow ReformatFragments {
     input {
         File fragments
         Int numCores
+
+        # docker-related
+        String dockerRegistry
     }
 
     call ReformatFragments.ReformatFragments {
         input:
             fragments = fragments,
-            numCores = numCores
+            numCores = numCores,
+            dockerRegistry = dockerRegistry
     }
 }

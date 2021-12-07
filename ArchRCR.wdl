@@ -20,6 +20,9 @@ workflow ArchRCR {
 
         # ArchR unstable with multiprocessing
         Int numCores
+
+        # docker-related
+        String dockerRegistry
     }
 
     call Count.Count {
@@ -27,7 +30,8 @@ workflow ArchRCR {
             sampleName = sampleName,
             fastqNames = fastqNames,
             referenceGenome = genomeCellRanger,
-            fastqFiles = fastqFiles
+            fastqFiles = fastqFiles,
+            dockerRegistry = dockerRegistry
     }
 
     # reformat fragments only if requested
@@ -35,12 +39,14 @@ workflow ArchRCR {
         call ReformatFragments.ReformatFragments {
             input:
                 fragments = Count.outFragments,
-                numCores = numCores
+                numCores = numCores,
+                dockerRegistry = dockerRegistry
         }
 
         call TabixfyFragments.TabixfyFragments {
             input:
-                fragments = ReformatFragments.out
+                fragments = ReformatFragments.out,
+                dockerRegistry = dockerRegistry
         }
     }
 
@@ -53,12 +59,14 @@ workflow ArchRCR {
             fragmentsIndexFiles = [finalFragmentsIndex],
             sampleNames = [sampleName],
             genome = genomeArchR,
-            numCores = numCores
+            numCores = numCores,
+            dockerRegistry = dockerRegistry
     }
 
     call ConstructAnnData.ConstructAnnData {
         input:
-            exports = Run.exports
+            exports = Run.exports,
+            dockerRegistry = dockerRegistry
     }
 
     output {

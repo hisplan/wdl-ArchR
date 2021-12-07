@@ -4,9 +4,12 @@ task TabixfyFragments {
 
     input {
         File fragments
+
+        # docker-related
+        String dockerRegistry
     }
 
-    String dockerImage = "hisplan/htslib:1.9"
+    String dockerImage = dockerRegistry + "/htslib:1.9"
     Float inputSize = size(fragments, "GiB")
     String outFilename = basename(fragments) + ".tbi"
 
