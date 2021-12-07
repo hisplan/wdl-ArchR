@@ -87,7 +87,8 @@ task Count {
 
     runtime {
         docker: dockerImage
-        cpu: 15
-        memory: "100 GB"
+        disks: "local-disk " + ceil(5 * (if inputSize < 1 then 50 else inputSize)) + " HDD"
+        cpu: 24
+        memory: "160 GB"
     }
 }
