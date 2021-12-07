@@ -16,5 +16,6 @@
     ],
     "ArchRSA.genome": "hg19",
     "ArchRSA.numCores": 1,
-    "ArchRSA.reformatFragments": false
+    "ArchRSA.reformatFragments": false,
+    "ArchRSA.dockerRegistry": "quay.io/hisplan"
 }
