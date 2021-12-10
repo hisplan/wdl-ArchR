@@ -9,9 +9,9 @@ fi
 java -jar ${SCING_HOME}/devtools/womtool.jar \
     validate \
     ArchRSA.wdl \
-    --inputs ./configs/dev-fragments.inputs.aws.json
+    --inputs ./configs/template.fragments.inputs.json
 
 java -jar ${SCING_HOME}/devtools/womtool.jar \
     validate \
     ArchRCR.wdl \
-    --inputs ./configs/dev-fastq.inputs.aws.json
+    --inputs ./configs/template.fastq.inputs.json
