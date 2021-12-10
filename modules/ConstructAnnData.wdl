@@ -9,7 +9,7 @@ task ConstructAnnData {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/archr2adata:0.0.2"
+    String dockerImage = dockerRegistry + "/archr2adata:0.0.3"
 
     command <<<
         set -euo pipefail
