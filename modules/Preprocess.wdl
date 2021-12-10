@@ -10,7 +10,7 @@ task RunTutorial {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922"
+    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922b"
 
     command {
         set -euo pipefail
@@ -56,7 +56,7 @@ task Run {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922"
+    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922b"
 
     command <<<
         set -euo pipefail

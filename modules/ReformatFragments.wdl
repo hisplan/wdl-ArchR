@@ -10,7 +10,7 @@ task ReformatFragments {
         String dockerRegistry
     }
 
-    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922"
+    String dockerImage = dockerRegistry + "/archr:0.9.x-snapshot-20200922b"
     Float inputSize = size(fragments, "GiB")
     String outFilename = basename(fragments, ".tsv.gz") + "-Reformat.tsv.gz"
 
