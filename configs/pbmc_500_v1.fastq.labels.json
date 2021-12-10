@@ -1,9 +1,9 @@
 {
     "pipelineType": "ArchRCR",
-    "project": "Dev",
+    "project": "DevTest",
     "sample": "atac_pbmc_500_v1",
     "owner": "chunj",
     "destination": "s3://dp-lab-test/ArchRCR/atac_pbmc_500_v1",
     "transfer": "skip",
-    "comment": "Modified ArchR from FASTQ"
+    "comment": ""
 }

@@ -1,0 +1,15 @@
+{
+    "ArchRSA.fragmentsFiles": [
+        "s3://dp-lab-test/archr/datasets/pbmc_500_nextgem/atac_pbmc_500_nextgem_fragments.tsv.gz"
+    ],
+    "ArchRSA.fragmentsIndexFiles": [
+        "s3://dp-lab-test/archr/datasets/pbmc_500_nextgem/atac_pbmc_500_nextgem_fragments.tsv.gz.tbi"
+    ],
+    "ArchRSA.sampleNames": [
+        "atac_pbmc_500_nextgem"
+    ],
+    "ArchRSA.genome": "hg38",
+    "ArchRSA.numCores": 1,
+    "ArchRSA.reformatFragments": false,
+    "ArchRSA.dockerRegistry": "quay.io/hisplan"
+}

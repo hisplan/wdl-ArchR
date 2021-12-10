@@ -1,9 +1,0 @@
-{
-    "pipelineType": "ArchRSA",
-    "project": "Dev",
-    "sample": "BMMC,CD34_BMMC,PBMC",
-    "owner": "chunj",
-    "destination": "s3://dp-lab-test/ArchRSA/test",
-    "transfer": "-",
-    "comment": "ArchR"
-}

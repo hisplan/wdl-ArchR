@@ -1,0 +1,21 @@
+{
+    "ArchRCR.sampleName": "atac_pbmc_500_v1",
+    "ArchRCR.fastqNames": "atac_pbmc_500_v1",
+    "ArchRCR.fastqFiles": [
+        "s3://dp-lab-test/atac/atac_pbmc_500_v1/atac_pbmc_500_v1_S1_L001_I1_001.fastq.gz",
+        "s3://dp-lab-test/atac/atac_pbmc_500_v1/atac_pbmc_500_v1_S1_L002_I1_001.fastq.gz",
+        "s3://dp-lab-test/atac/atac_pbmc_500_v1/atac_pbmc_500_v1_S1_L001_R1_001.fastq.gz",
+        "s3://dp-lab-test/atac/atac_pbmc_500_v1/atac_pbmc_500_v1_S1_L002_R1_001.fastq.gz",
+        "s3://dp-lab-test/atac/atac_pbmc_500_v1/atac_pbmc_500_v1_S1_L001_R2_001.fastq.gz",
+        "s3://dp-lab-test/atac/atac_pbmc_500_v1/atac_pbmc_500_v1_S1_L002_R2_001.fastq.gz",
+        "s3://dp-lab-test/atac/atac_pbmc_500_v1/atac_pbmc_500_v1_S1_L001_R3_001.fastq.gz",
+        "s3://dp-lab-test/atac/atac_pbmc_500_v1/atac_pbmc_500_v1_S1_L002_R3_001.fastq.gz"
+    ],
+    "ArchRCR.genomeCellRanger": {
+        "name": "GRCh38-2020-A-2.0.0",
+        "location": "https://cf.10xgenomics.com/supp/cell-atac/refdata-cellranger-arc-GRCh38-2020-A-2.0.0.tar.gz"
+    },
+    "ArchRCR.genomeArchR": "hg38",
+    "ArchRCR.numCores": 1,
+    "ArchRCR.dockerRegistry": "quay.io/hisplan"
+}
