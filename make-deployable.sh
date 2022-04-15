@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 wf_name="archr"
-version="0.0.2"
+version="0.0.3"
 files="submit-*.sh ArchR.deps.zip ArchRCR.wdl ArchRSA.wdl ArchR.options.aws.json ArchR.options.gcp.json configs/template.*.json"
 dest="$HOME/scing/bin"
 
