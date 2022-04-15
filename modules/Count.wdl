@@ -12,7 +12,7 @@ task Count {
         String dockerRegistry
     }
 
-    String cellRangerAtacVersion = "2.0.0"
+    String cellRangerAtacVersion = "2.1.0"
     String dockerImage = dockerRegistry + "/cromwell-cellranger-atac:" + cellRangerAtacVersion
     Float inputSize = size(fastqFiles, "GiB")
 
@@ -25,8 +25,6 @@ task Count {
 
         export MRO_DISK_SPACE_CHECK=disable
 
-        df -h
-
         path_input=`dirname ~{fastqFiles[0]}`
 
         echo ${path_input}
@@ -38,11 +36,8 @@ task Count {
         chmod -R +r reference
         rm -rf reference.tgz
 
-        df -h
-
         # run pipeline
         cellranger-atac count \
-            --uiport=3600 \
             --id=~{sampleName} \
             --reference=./reference/ \
             --fastqs=${path_input} \
